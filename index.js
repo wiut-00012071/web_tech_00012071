@@ -99,15 +99,12 @@ function urlGenerator() {
 
     let string = "";
 
-    if (filter.platform) {
-        string += `&parent_platforms=${filter.platform}`;
-    }
-    if (filter.period) {
-        string += `&dates=${filter.period}`;
-    }
-    if (filter.search) {
-        string += `&search=${filter.search}`;
-    }
+    if (filter.platform) string += `&parent_platforms=${filter.platform}`;
+
+    if (filter.period) string += `&dates=${filter.period}`;
+
+    if (filter.search) string += `&search=${filter.search}`;
+
     const filteredURL = generalURL + string;
 
     return filteredURL;
@@ -116,19 +113,21 @@ function urlGenerator() {
 async function getGameCards(url) {
     prevButton.style = "display: none";
     nextButton.style = "display: none";
+
     const data = await useFetch(url);
+
     return (() => {
-        console.log(data);
         filter.currPage = url;
 
         let cards = "";
-        if (data.results.length === 0) {
-            return `<div>NO GAMES FOUND</div>`;
-        }
+
+        if (data.results.length === 0) return `<div>NO GAMES FOUND</div>`;
+
         data.results.forEach((game) => {
             cards += useCard(game);
             sessionStorage.setItem(game.slug, JSON.stringify(game));
         });
+
         sessionStorage.setItem("lastFilter", JSON.stringify(filter));
 
         if (data.previous) {
@@ -140,6 +139,7 @@ async function getGameCards(url) {
             nextButton.style = "display: block";
             filter.nextPage = data.next;
         }
+
         return cards;
     })(await data);
 }
