@@ -1,5 +1,7 @@
 "use strict";
+
 // IMPORTS
+
 import TOKEN from "./secret.js";
 
 import { platformIcons } from "./modules/objects.js";
@@ -24,11 +26,11 @@ const searchGameFilter = document.querySelector("#searchGameFilter");
 
 const filterForm = document.querySelector("#filterForm");
 
+const platformRadios = document.querySelectorAll(".platform-radio");
+
 const prevButton = document.querySelector("#prevButton");
 
 const nextButton = document.querySelector("#nextButton");
-
-const platformRadios = document.querySelectorAll(".platform-radio");
 
 // VARIABLES FOR STATE MANAGEMENT
 
@@ -43,6 +45,7 @@ let filter = {
 };
 
 // CODE FOR EXECUTION
+
 burgerButton.addEventListener("click", () => {
     sidebarToggle();
 });

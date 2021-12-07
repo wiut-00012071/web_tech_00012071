@@ -1,20 +1,42 @@
 import { platformIcons, months } from "./objects.js";
 
-// FUNCTION FOR CREATING GAME CARDS
+// Helper functions for validating API data
 
-export default function useCard(data) {
-    const imageResized = `${data.background_image.slice(
+function displayMetascore(data) {
+    if (data.metacritic) {
+        let metacriticColor = "green";
+
+        if (data.metacritic < 70) metacriticColor = "yellow";
+
+        if (data.metacritic < 40) metacriticColor = "red";
+
+        return `<div class="game-card__metascore ${metacriticColor}">${data.metacritic}</div>`;
+    }
+    return "";
+}
+
+function displayResizedImage(data) {
+    return `${data.background_image.slice(
         0,
         27
     )}/resize/640/-${data.background_image.slice(27)}`;
+}
 
-    console.log(imageResized);
-    let metacriticColor = "green";
+function displayPlatforms(data) {
+    let platforms = "";
+    data.parent_platforms?.forEach((platform) => {
+        const id = `${platform.platform.id}`;
+        if (!Object.keys(platformIcons).includes(id)) return;
+        platforms += `<div class="game-card__platform">${platformIcons[id]}</div>`;
+    });
+    return platforms;
+}
 
-    if (data.metacritic < 70) metacriticColor = "yellow";
+function displayAgeRating(data) {
+    return data.esrb_rating?.name_en ? data.esrb_rating.name_en : "";
+}
 
-    if (data.metacritic < 40) metacriticColor = "red";
-
+function displayReleasedDate(data) {
     let released = "";
 
     if (data.tba) {
@@ -28,48 +50,39 @@ export default function useCard(data) {
             released = "No date";
         }
     }
+    return released;
+}
 
-    let platforms = "";
-    data.parent_platforms?.forEach((platform) => {
-        const id = `${platform.platform.id}`;
-        if (!Object.keys(platformIcons).includes(id)) return;
-        platforms += `<div class="game-card__platform">${platformIcons[id]}</div>`;
-    });
+// Function for creating a game card
 
+export default function useCard(data) {
     return `<div class="game-card">
-                ${
-                    data.metacritic
-                        ? `<div class="game-card__metascore ${metacriticColor}">${data.metacritic}</div>`
-                        : ""
-                }
+                ${displayMetascore(data)}
                 <div class="game-card__image">
                     <img
                         loading="lazy"
-                        src="${imageResized}"
+                        src="${displayResizedImage(data)}"
                         alt=""
                     />
                 </div>
                 <div class="game-card__content">
                     <div class="game-card__platforms">
-                        ${platforms}
+                        ${displayPlatforms(data)}
                     </div>
                     <a href="pages/game-page.html?${data.slug}" >
                         <div class="game-card__title">
                                 <h2>
                                     ${data.name}
                                 </h2>
-                    
                         </div>
                     </a>    
                     <div class="game-card__rating-and-release">
                         <div class="game-card__rating">
-                            ${
-                                data.esrb_rating?.name
-                                    ? data.esrb_rating.name
-                                    : ""
-                            }
+                            ${displayAgeRating(data)}
                         </div>
-                        <div class="game-card__release">${released}</div>
+                        <div class="game-card__release">
+                            ${displayReleasedDate(data)}
+                        </div>
                     </div>
                 </div>
             </div>
