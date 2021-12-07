@@ -3,6 +3,12 @@ import { platformIcons, months } from "./objects.js";
 // FUNCTION FOR CREATING GAME CARDS
 
 export default function useCard(data) {
+    const imageResized = `${data.background_image.slice(
+        0,
+        27
+    )}/resize/640/-${data.background_image.slice(27)}`;
+
+    console.log(imageResized);
     let metacriticColor = "green";
 
     if (data.metacritic < 70) metacriticColor = "yellow";
@@ -31,7 +37,6 @@ export default function useCard(data) {
     });
 
     return `<div class="game-card">
-
                 ${
                     data.metacritic
                         ? `<div class="game-card__metascore ${metacriticColor}">${data.metacritic}</div>`
@@ -40,7 +45,7 @@ export default function useCard(data) {
                 <div class="game-card__image">
                     <img
                         loading="lazy"
-                        src="${data.background_image}"
+                        src="${imageResized}"
                         alt=""
                     />
                 </div>

@@ -136,8 +136,8 @@ async function displayGame() {
                     <h1 class="title">${data.name}</h1>
                     ${displayMetascore(data.metacritic)}
                 </section>
-                <section class="about">
-                    <article id="description" class="description">
+                <section id="description" class="about">
+                    <article  class="description">
                         <h2>Description</h2>
                         <p>
                         ${data.description}
@@ -152,7 +152,7 @@ async function displayGame() {
                         ${displayScreenshots(screenshotsArray)}
                     </div>
                 </section>
-                <section class="details-and-shops">
+                <section id="details" class="details-and-shops">
                     <section class="details">
                         <div>
                         <p class="details__label">Official website</p>
@@ -202,7 +202,7 @@ async function displayGame() {
                 </section>
                 ${
                     redditData.results.length > 0
-                        ? ` <section class="reddit">
+                        ? ` <section id="reddit" class="reddit">
                                 <h3>Recent Reddit Comments</h3>
                                 <section class="comments">
                                     ${displayComments(redditData.results)}
