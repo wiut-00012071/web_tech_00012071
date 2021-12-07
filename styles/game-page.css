@@ -1,0 +1,153 @@
+@import url(./general-styles.css);
+.game-content {
+    color: white;
+    padding-top: 80vh;
+    padding-bottom: 125vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top;
+}
+.content {
+    background-color: rgba(0, 0, 0);
+    box-shadow: 0 0 40vh 40vh black;
+}
+.header {
+    transform: translate(0, -100%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.title {
+    font-size: 5rem;
+    max-width: 20ch;
+}
+.metascore {
+    color: green;
+    font-size: 3rem;
+    line-height: 1;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    border: 0.25rem solid green;
+}
+.about {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.description {
+    width: 50%;
+}
+.description h2 {
+    font-size: 3rem;
+}
+.description h3 {
+    font-size: 2rem;
+}
+.screenshots {
+    width: 45%;
+    display: grid;
+    justify-content: center;
+    gap: 2rem;
+    grid-template-columns: repeat(2, auto);
+}
+.screenshot {
+    overflow: hidden;
+    border-radius: 0.5rem;
+    transition: transform 0.25s;
+    width: 100%;
+    aspect-ratio: 3/2;
+}
+.screenshot:hover {
+    transform: scale(1.1);
+}
+.details-and-shops {
+    margin-top: 5rem;
+    justify-content: space-between;
+    display: flex;
+}
+.details {
+    width: 50%;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, 50%);
+}
+.details__label {
+    font-weight: 700;
+    color: rgb(100, 100, 100);
+}
+.details > div {
+    margin: 1rem;
+}
+.stores {
+    width: 40%;
+}
+.stores > h3 {
+    text-align: left;
+    font-size: 2rem;
+    margin-left: 1rem;
+}
+.stores > div {
+    width: 100%;
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+}
+.stores a {
+    display: block;
+    padding: 1em;
+    margin: 0.5rem;
+    text-align: center;
+    border-radius: 5px;
+    background-color: rgb(20, 20, 20);
+}
+
+.reddit {
+    margin-top: 7rem;
+}
+.reddit h3 {
+    font-size: 3rem;
+}
+
+.comments {
+    margin-top: 5rem;
+    display: grid;
+    column-fill: auto;
+    align-items: center;
+    grid-template-columns: repeat(2, 50%);
+}
+
+.comment {
+    margin: 1rem;
+    background-color: rgb(20, 20, 20);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    color: white;
+}
+.comment__image {
+    overflow: hidden;
+    aspect-ratio: 2/1;
+}
+.comment__image img {
+    object-fit: contain;
+}
+.comment__user-name {
+    font-size: 1.5rem;
+}
+.comment__content {
+    margin-top: 2rem;
+}
+.comment__text h5 {
+    margin-top: 2rem;
+    font-size: 1.25rem;
+}
+.comment__text p {
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+.comment__text a {
+    display: none;
+}
+.comment__time {
+    text-align: right;
+}

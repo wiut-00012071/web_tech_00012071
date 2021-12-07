@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script type="module" src="index.js" defer></script>
+        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="index.css" />
+        <link rel="shortcut icon" type="image/jpg" href="./assets/favicon.png"/>
+        <title>RAWG 00012071</title>
+    </head>
+    <body>
+        <nav class="navigation">
+            <button id="burgerButton" class="burger">
+                <span class="burger-line"></span>
+            </button>
+            <a class="logo" href="#"><img src="./assets/logo.png" alt=""></a>
+            <a href="#">About</a>
+        </nav>
+            <aside class="sidebar" id="sidebar">
+                <form class="form" action="#" id="filterForm" method="get">
+                    <div class="search">
+                        <input
+                            type="text"
+                            id="searchGameFilter"
+                            name="searchGameFilter"
+                            placeholder="search"
+                            autocomplete="off"
+                            oninput="this.value = this.value.replace(/[^0-9A-Za-z]/g, '');"
+                        />
+                    </div>
+                    <div class="period">
+                        <select
+                            name="releasePeriodFilter"
+                            id="releasePeriodFilter"
+                        >
+                            <option value="">All time</option>
+                            <option value="2020-01-01,2021-12-31">
+                                2020-2021
+                            </option>
+                            <option value="2010-01-01,2019-12-31">
+                                2010-2019
+                            </option>
+                            <option value="2000-01-01,2009-12-31">
+                                2000-2009
+                            </option>
+                            <option value="1990-01-01,1999-12-31">
+                                1990-1999
+                            </option>
+                            <option value="1980-01-01,1989-12-31">
+                                1980-1989
+                            </option>
+                            <option value="1970-01-01,1979-12-31">
+                                1970-1979
+                            </option>
+                        </select>
+                    </div>
+                    <div class="platforms" id="platformsFilter">
+                        <div class="platform">
+                            <input
+                                class="platform-radio"
+                                name="platform"
+                                type="radio"
+                                id="1"
+                            />
+                            <label class="platform-label pc" for="1">PC</label>
+                        </div>
+                        <div class="platform">
+                            <input
+                                class="platform-radio"
+                                name="platform"
+                                type="radio"
+                                id="2"
+                            />
+                            <label class="platform-label playstation" for="2"
+                                >PlayStation</label
+                            >
+                        </div>
+                        <div class="platform">
+                            <input
+                                class="platform-radio"
+                                name="platform"
+                                type="radio"
+                                id="3"
+                            />
+                            <label class="platform-label xbox" for="3"
+                                >Xbox</label
+                            >
+                        </div>
+                        <div class="platform">
+                            <input
+                                class="platform-radio"
+                                name="platform"
+                                type="radio"
+                                id="7"
+                            />
+                            <label class="platform-label nintendo" for="7"
+                                >Nintendo</label
+                            >
+                        </div>
+                        <div class="platform">
+                            <input
+                                class="platform-radio"
+                                name="platform"
+                                type="radio"
+                                id="4"
+                            />
+                            <label class="platform-label ios" for="4"
+                                >IOS</label
+                            >
+                        </div>
+                        <div class="platform">
+                            <input
+                                class="platform-radio"
+                                name="platform"
+                                type="radio"
+                                id="8"
+                            />
+                            <label class="platform-label android" for="8"
+                                >Android</label
+                            >
+                        </div>
+                    </div>
+                    <footer class="footer">
+                        This project was created as a course work by 00012071 - a student of Westminster International University in Tashkent, and does not represent an actual website. Credits to <a href="api.rawg.io">RAWG.io</a></a> for providing free API. 
+                    </footer>
+                </form>
+            </aside>
+            <main class="main-content">
+                <section id="gameCardsGrid" class="cards">
+                </section>
+                <div class="page-buttons">
+                    <button class="page-button" id="prevButton">Prev</button>
+                    <button class="page-button" id="nextButton">Next</button>
+                </div>
+            </main>
+        </div>
+        <div class="image-viewer">
+            <div class="image">
+                <img
+                    src="https://picsum.photos/200/300
+                "
+                    alt=""
+                />
+            </div>
+            <button class="image-viewer__close-button"></button>
+        </div>
+    </body>
+</html>
