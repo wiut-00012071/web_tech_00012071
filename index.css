@@ -23,13 +23,14 @@
 }
 
 .sidebar {
+    padding-top: 70px;
     font-size: 1.25rem;
     display: block;
-    z-index: 2;
+    z-index: 1;
     position: fixed;
-    top: 70px;
+    top: 0;
     width: 250px;
-    height: calc(100vh - 70px);
+    height: 100vh;
     overflow: hidden;
     background-color: rgb(20, 20, 20);
     transition: 500ms ease transform;

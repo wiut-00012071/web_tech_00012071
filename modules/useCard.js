@@ -15,10 +15,13 @@ function displayMetascore(data) {
 }
 
 function displayResizedImage(data) {
-    return `${data.background_image.slice(
+    if (!data.background_image) return "";
+    const resizedImage = `
+    ${data.background_image.slice(
         0,
         27
     )}/resize/640/-${data.background_image.slice(27)}`;
+    return `<img loading="lazy" src="${resizedImage}" alt="" />`;
 }
 
 function displayPlatforms(data) {
@@ -41,11 +44,7 @@ export default function useCard(data) {
     return `<div class="game-card">
                 ${displayMetascore(data)}
                 <div class="game-card__image">
-                    <img
-                        loading="lazy"
-                        src="${displayResizedImage(data)}"
-                        alt=""
-                    />
+                ${displayResizedImage(data)}
                 </div>
                 <div class="game-card__content">
                     <div class="game-card__platforms">
