@@ -28,4 +28,15 @@ const months = [
     "November",
     "December",
 ];
-export { platformIcons, months };
+
+function displayReleasedDate(data) {
+    if (data.tba) return "TBA";
+
+    if (!data.released) return "";
+
+    const [year, month, day] = data.released.split("-");
+
+    return `${day} ${months[month - 1]} ${year}`;
+}
+
+export { platformIcons, months, displayReleasedDate };
