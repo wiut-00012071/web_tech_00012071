@@ -44,11 +44,11 @@ export default function useCard(data) {
                         alt=""
                     />
                 </div>
-                <div class="pages/game-card__content">
+                <div class="game-card__content">
                     <div class="game-card__platforms">
                         ${platforms}
                     </div>
-                    <a href="game-page.html?${data.slug}" >
+                    <a href="pages/game-page.html?${data.slug}" >
                         <div class="game-card__title">
                                 <h2>
                                     ${data.name}

@@ -1,5 +1,5 @@
 "use strict";
-import TOKEN from "..secret.js";
+import TOKEN from "../secret.js";
 
 import { months } from "../modules/objects.js";
 
