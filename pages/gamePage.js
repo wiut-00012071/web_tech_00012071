@@ -9,6 +9,8 @@ import useComment from "../modules/useComment.js";
 
 const main = document.getElementById("main");
 
+const navigation = document.querySelector("#navigation");
+
 const gameID = window.location.search.substring(1);
 
 const url = `https://api.rawg.io/api/games/${gameID}?key=${TOKEN}`;
@@ -110,13 +112,19 @@ function displayStores(data) {
 
 function displayComments(data) {
     if (data.results.length === 0) return "";
+    navigation.innerHTML = `
+            <a class="logo" href="/">RAWG</a>
+            <a href="#description">ABOUT</a>
+            <a href="#details">DETAILS</a>
+            <a href="#reddit">REDDIT</a>
+    `;
     let comments = "";
     data.results.forEach((comment) => {
         comments += useComment(comment);
     });
 
     return `<section class="reddit" id="reddit">
-                <h3>Recent Reddit Comments</h3>
+                <h2>Recent Reddit Comments</h2>
                 <div class="comments">
                     ${comments}
                 </div>
