@@ -102,7 +102,7 @@ function displayLastUpdated(data) {
     const [year, month, day] = updated.split("-");
 
     return `
-        <div>
+        <div class="fact">
             <p class="label">Last update</p>
             <p>
                 ${day} ${months[month - 1]} ${year}

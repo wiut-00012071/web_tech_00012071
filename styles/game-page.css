@@ -106,8 +106,10 @@
 .facts {
     width: 50%;
     display: grid;
-    grid-template-columns: repeat(2, auto);
-    gap: 2rem;
+    grid-template-columns: repeat(2, 50%);
+}
+.fact {
+    margin: 1rem;
 }
 
 .label {
@@ -191,13 +193,13 @@
     inset: 0;
     width: 100vw;
     height: 100vh;
-    padding: 18vmin;
+    padding: 12vmin;
 }
 
 .image-viewer__close-button {
     position: absolute;
-    width: 15vmin;
-    height: 15vmin;
+    width: 10vmin;
+    height: 10vmin;
     right: 2vmin;
     top: 2vmin;
     border-radius: 15%;

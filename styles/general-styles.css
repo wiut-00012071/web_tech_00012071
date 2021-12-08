@@ -42,6 +42,7 @@
 }
 ::-webkit-scrollbar {
     background-color: var(--dark-grey);
+    width: 0.5vw;
 }
 ::-webkit-scrollbar-thumb {
     background-color: var(--lighter-grey);
