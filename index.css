@@ -60,18 +60,15 @@
     transform: translateY(700%);
 }
 
-.period {
-    width: 100%;
-    padding: 1rem 0.5rem 0;
-}
+.period,
 .search {
-    padding: 0 0.5rem;
+    padding: 0.5rem;
     width: 100%;
 }
 .period > select,
 .search input {
-    background-color: var(--medium-grey);
-    padding: 0.5rem 1rem;
+    background-color: var(--darker-grey);
+    padding: 0.5em 1em;
     width: 100%;
 }
 select {
@@ -164,8 +161,8 @@ select {
 }
 .footer {
     text-align: center;
-    padding: 1rem;
-    font-size: 0.75rem;
+    padding: 1em;
+    font-size: 1rem;
 }
 
 .not-found {
