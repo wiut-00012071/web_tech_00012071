@@ -161,8 +161,8 @@ select {
 }
 .footer {
     text-align: center;
-    padding: 1em;
-    font-size: 1rem;
+    padding: 0.5em;
+    font-size: 12px;
 }
 
 .not-found {
