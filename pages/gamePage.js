@@ -11,11 +11,22 @@ const main = document.getElementById("main");
 
 const navigation = document.querySelector("#navigation");
 
+const imageViewer = document.querySelector("#imageViewer");
+
 const gameID = window.location.search.substring(1);
 
 const url = `https://api.rawg.io/api/games/${gameID}?key=${TOKEN}`;
 
 const redditUrl = `https://api.rawg.io/api/games/${gameID}/reddit?key=${TOKEN}`;
+
+document.addEventListener("click", (e) => {
+    if (e.target.id === "imageViewerCloseButton") {
+        imageViewer.classList.remove("open");
+    }
+    if (e.target.classList.value === "screenshot__image") {
+        viewImage(e.target.src);
+    }
+});
 
 const screenshots = JSON.parse(
     sessionStorage.getItem(gameID)
@@ -46,14 +57,28 @@ function displayScreenshots(data) {
         )}/resize/640/-${shot.image.slice(27)}`;
 
         screenshots += `<div class="screenshot">
-        <img
-            loading="lazy"
-            src="${resizedImage}"
-            alt=""
-        />
-        </div>`;
+                            <img
+                                class="screenshot__image"
+                                loading="lazy"
+                                src="${resizedImage}"
+                                alt=""
+                            />
+                        </div>`;
     });
     return screenshots;
+}
+
+function viewImage(image) {
+    imageViewer.innerHTML = `
+            <div class="image">
+                <img
+                    src="${image}"
+                    alt=""
+                />
+            </div>
+            <button class="image-viewer__close-button" id="imageViewerCloseButton"></button>`;
+
+    imageViewer.classList.add("open");
 }
 
 function displayMetacriticScores(data) {
