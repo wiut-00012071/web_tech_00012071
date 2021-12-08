@@ -2,17 +2,17 @@
 @import url(styles/game-card.css);
 
 .main-content {
-    padding-top: 100px;
     margin-left: 250px;
-    min-height: 100vh;
-    position: relative;
 }
 .cards {
+    padding-top: 100px;
+    min-height: 100vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     color: var(--white);
     align-items: center;
+    position: relative;
 }
 
 .sidebar {
