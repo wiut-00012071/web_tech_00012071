@@ -3,16 +3,16 @@
 
 .main-content {
     margin-left: 250px;
+    min-height: calc(100vh - 70px);
+    position: relative;
 }
 .cards {
     padding-top: 1rem;
-    min-height: calc(100vh - 70px);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     color: var(--white);
     align-items: center;
-    position: relative;
 }
 
 .sidebar {
@@ -23,7 +23,7 @@
     position: fixed;
     top: 0;
     width: 250px;
-    height: 100vh;
+    height: 100%;
     overflow: hidden;
     background-color: var(--dark-grey);
     transition: 500ms ease transform;
