@@ -34,7 +34,7 @@
     margin-top: 1em;
     padding: 16px 0;
     font-size: 28px;
-    transition: 200ms ease;
+    transition: 150ms ease filter;
 }
 .game-card__title:hover {
     filter: drop-shadow(0 0 0.5em white);

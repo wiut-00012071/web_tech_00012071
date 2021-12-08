@@ -177,34 +177,34 @@ async function displayGame() {
                                     ${displayLastUpdated(data)}
                                     <div class="fact">
                                         <p class="label">Playtime</p>
-                                        <div class="text">
+                                        <p class="text">
                                             ${data.playtime} hours
-                                        </div>
+                                        </p>
                                     </div>
                                     <div class="fact">
                                         <p class="label">Publishers</p>
-                                        <div class="text">
+                                        <p class="text">
                                             ${displayList(data.publishers)}
-                                        </div>
+                                        </p>
                                     </div>
                                     <div class="fact">
                                         <p class="label">Developers</p>
-                                        <div class="text">
+                                        <p class="text">
                                             ${displayList(data.developers)}
-                                        </div>
+                                        </p>
                                     </div>
                                     <div class="fact">
                                         <p class="label">Platforms</p>
-                                        <div class="text">
+                                        <p class="text">
                                             ${displayPlatforms(data)}
-                                        </div>
+                                        </p>
                                     </div>
                                     ${displayMetacriticScores(data)}
                                     <div class="fact">
                                         <p class="label">Genres</p>
-                                        <div class="text">
+                                        <p class="text">
                                             ${displayList(data.genres)}
-                                        </div>
+                                        </p>
                                     </div>
                                 </div>
                                 <div class="stores">

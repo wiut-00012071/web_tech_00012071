@@ -96,6 +96,10 @@ input::placeholder {
 }
 .navigation > a {
     padding: 0 0.5em;
+    transition: 150ms ease filter;
+}
+.navigation > a:hover {
+    filter: drop-shadow(0 0 0.5em white);
 }
 
 .navigation .logo {
