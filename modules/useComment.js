@@ -17,7 +17,7 @@ function displayDate(data) {
 
     return `<p class="comment__time">
                 ${day} ${months[month - 1]} ${year}
-            </p>;`;
+            </p>`;
 }
 
 export default function useComment(data) {

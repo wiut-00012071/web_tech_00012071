@@ -7,7 +7,7 @@ import useFetch from "../modules/useFetch.js";
 
 import useComment from "../modules/useComment.js";
 
-const gameContent = document.getElementById("gameContent");
+const main = document.getElementById("main");
 
 const gameID = window.location.search.substring(1);
 
@@ -25,24 +25,30 @@ function displayMetascore(data) {
     if (data.metacritic < 70) color = "yellow";
     if (data.metacritic < 40) color = "red";
 
-    return `<h2 class="metascore ${color}">${data.metacritic}</h2>`;
+    return `<h1 class="metascore ${color}">${data.metacritic}</h1>`;
 }
 
 function displayRedditDescription(data) {
     if (!data.reddit_description) return "";
-    return `<h3>Reddit</h3>${data.reddit_description}`;
+    return `<h3>Reddit</h3><p>${data.reddit_description}</p>`;
 }
 
 function displayScreenshots(data) {
     let screenshots = "";
     data.forEach((shot, i) => {
         if (i == 0) return;
+
+        const resizedImage = `${shot.image.slice(
+            0,
+            27
+        )}/resize/640/-${shot.image.slice(27)}`;
+
         screenshots += `<div class="screenshot">
-                <img
-                    src="${shot.image}"
-                    alt=""
-                />
-                </div>`;
+        <img
+            src="${resizedImage}"
+            alt=""
+        />
+        </div>`;
     });
     return screenshots;
 }
@@ -50,18 +56,12 @@ function displayScreenshots(data) {
 function displayMetacriticScores(data) {
     if (data.metacritic_platforms.length === 0) return "";
     let scores = "";
-    data.metacritic_platforms.forEach((score) => {
-        scores += `
-            <p>
-                <a href="${score.url}">
-                <span>${score.metascore}</span>
-                <span>${score.platform.name}</span>
-                </a>              
-            </p>
-        `;
+    data.metacritic_platforms.forEach((score, i) => {
+        if (i !== 0) scores += ", ";
+        scores += `<a href="${score.url}"><span>${score.platform.name}</span>-<span>(${score.metascore})</span></a>`;
     });
     return `<div>
-                <p class="details__label">Metacritic scores</p>
+                <p class="label">Metacritic scores</p>
                 <div>${scores}</div>
             </div>`;
 }
@@ -75,8 +75,8 @@ function displayLastUpdated(data) {
 
     return `
         <div>
-            <p class="details__label">Last update</p>
-            <p>    
+            <p class="label">Last update</p>
+            <p>
                 ${day} ${months[month - 1]} ${year}
             </p>
         </div>`;
@@ -84,8 +84,9 @@ function displayLastUpdated(data) {
 
 function displayList(array) {
     let items = "";
-    array.forEach((item) => {
-        items += `<p>${item.name}</p>`;
+    array.forEach((item, i) => {
+        if (i !== 0) items += ", ";
+        items += `${item.name}`;
     });
     return items;
 }
@@ -93,8 +94,8 @@ function displayList(array) {
 function displayPlatforms(data) {
     let platforms = "";
     data.platforms.forEach((platform, i) => {
-        if (i === 0) platforms += `${platform.platform.name}`;
-        else platforms += `,  ${platform.platform.name}`;
+        if (i !== 0) platforms += ", ";
+        platforms += `${platform.platform.name}`;
     });
     return platforms;
 }
@@ -102,7 +103,7 @@ function displayPlatforms(data) {
 function displayStores(data) {
     let stores = "";
     data.stores.forEach((store) => {
-        stores += `<a href="https://${store.store.domain}">${store.store.name}</a>`;
+        stores += `<a class="store" href="https://${store.store.domain}">${store.store.name}</a>`;
     });
     return stores;
 }
@@ -114,84 +115,100 @@ function displayComments(data) {
         comments += useComment(comment);
     });
 
-    return `<section id="reddit" class="reddit">
+    return `<section class="reddit" id="reddit">
                 <h3>Recent Reddit Comments</h3>
-                <section class="comments">
+                <div class="comments">
                     ${comments}
-                </section>
+                </div>
             </section>`;
 }
 
 async function displayGame() {
     const data = await useFetch(url);
     const redditData = await useFetch(redditUrl);
-    gameContent.innerHTML = "LOADING";
     (() => {
         document.title = data.name;
-        gameContent.style.backgroundImage = `url(${data.background_image})`;
-        gameContent.innerHTML = `
-        <section class="content">
-            <div class="container">
-                <section class="header">
-                    <h1 class="title">${data.name}</h1>
-                    ${displayMetascore(data)}
-                </section>
-                <section id="description" class="about">
-                    <article  class="description">
-                        <h2>Description</h2>
-                        <p>
-                        ${data.description}
-                        ${displayRedditDescription(data)}
-                        </p>
-                    </article>
-                    <div class="screenshots">
-                        ${displayScreenshots(screenshots)}
+        main.innerHTML = `
+            <div class="wrapper" style="background-image: url(${
+                data.background_image
+            });">
+                <div class="content">
+                    <div class="container">
+                        <section class="header">
+                            <h1 class="title">${data.name}</h1>
+                            ${displayMetascore(data)}
+                        </section>
+                        <section class="description" id="description">
+                            <div class="about">
+                                <h2>About</h2>
+                               ${data.description}
+                               ${displayRedditDescription(data)}
+                            </div>
+                            <div class="screenshots">
+                                ${displayScreenshots(screenshots)}
+                            </div>
+                        </section>
+                        <section class="details" id="details">
+                            <h2>Details</h2>
+                            <div class="flex">
+                                <div class="facts">
+                                    <div class="fact">
+                                        <p class="label">Official website</p>
+                                        <div class="text">
+                                            <a href="${data.website}">
+                                                ${data.name}
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="fact">
+                                        <p class="label">Released</p>
+                                        <div class="text">
+                                            ${displayReleasedDate(data)}
+                                        </div>
+                                    </div>
+                                    ${displayLastUpdated(data)}
+                                    <div class="fact">
+                                        <p class="label">Playtime</p>
+                                        <div class="text">
+                                            ${data.playtime} hours
+                                        </div>
+                                    </div>
+                                    <div class="fact">
+                                        <p class="label">Publishers</p>
+                                        <div class="text">
+                                            ${displayList(data.publishers)}
+                                        </div>
+                                    </div>
+                                    <div class="fact">
+                                        <p class="label">Developers</p>
+                                        <div class="text">
+                                            ${displayList(data.developers)}
+                                        </div>
+                                    </div>
+                                    <div class="fact">
+                                        <p class="label">Platforms</p>
+                                        <div class="text">
+                                            ${displayPlatforms(data)}
+                                        </div>
+                                    </div>
+                                    ${displayMetacriticScores(data)}
+                                    <div class="fact">
+                                        <p class="label">Genres</p>
+                                        <div class="text">
+                                            ${displayList(data.genres)}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="stores">
+                                    ${displayStores(data)}
+                                </div>
+                            </div>
+                        </section>
+                        ${displayComments(redditData)}
                     </div>
-                </section>
-                <section id="details" class="details-and-shops">
-                    <section class="details">
-                        <div>
-                        <p class="details__label">Official website</p>
-                        <a href="${data.website}"><div>${data.name}</div></a>
-                        </div>
-                        <div>
-                            <p class="details__label">Genres</p>
-                            <div>${displayList(data.genres)}</div>
-                        </div>
-                        <div>
-                            <p class="details__label">Avarage playtime</p>
-                            <div>${data.playtime} hours</div>
-                        </div>
-                        <div>
-                            <p class="details__label">Developers</p>
-                            <div>${displayList(data.developers)}</div>
-                        </div>
-                        <div>
-                            <p class="details__label">Publishers</p>
-                            <div>${displayList(data.publishers)}</div>
-                        </div>
-                        ${displayMetacriticScores(data)}
-                        ${displayLastUpdated(data)}
-                        <div>
-                            <p class="details__label">Released</p>
-                            <p>${displayReleasedDate(data)}</p>
-                        </div>
-                        <div>
-                            <p class="details__label">Platforms</p>
-                            <p>${displayPlatforms(data)}</p>
-                        </div>
-
-                    </section>
-                    <section class="stores">
-                        <h3>Available at</h3>
-                        <div>
-                            ${displayStores(data)}
-                        </div>
-                    </section>
-                </section>
-                ${displayComments(redditData)}
+                </div>
             </div>
-        </section>`;
+            `;
     })(await data, await redditData);
 }
 

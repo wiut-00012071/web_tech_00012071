@@ -1,116 +1,133 @@
 @import url(./general-styles.css);
-.game-content {
-    color: white;
-    padding-top: 80vh;
-    padding-bottom: 125vh;
+.wrapper {
+    padding-top: 75vh;
+    padding-bottom: 130vh;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: top;
 }
+
 .content {
-    background-color: rgba(0, 0, 0);
+    background-color: #000;
     box-shadow: 0 0 40vh 40vh black;
 }
+
+.content h2,
+.content h3,
+.content h4 {
+    line-height: 2;
+}
+
+.content h2 {
+    font-size: 3rem;
+}
+
+.content h3 {
+    font-size: 2rem;
+}
+
+.content p {
+    line-height: 1.75;
+}
+
+/* HEADER */
+
 .header {
-    transform: translate(0, -100%);
     display: flex;
     justify-content: space-around;
     align-items: center;
+    transform: translate(0, -100%);
 }
 .title {
     font-size: 5rem;
     max-width: 20ch;
 }
+
 .metascore {
-    color: green;
     font-size: 3rem;
     line-height: 1;
     padding: 0.5rem;
     border-radius: 1rem;
+    color: green;
     border: 0.25rem solid green;
 }
-.about {
-    padding-top: 75px;
+
+/* DESCRIPTION */
+
+.description {
+    padding-top: 100px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
 }
-.description {
-    width: 50%;
-}
-.description h2 {
-    font-size: 3rem;
-}
-.description h3 {
-    font-size: 2rem;
-}
-.screenshots {
+
+.about {
     width: 45%;
+}
+
+.screenshots {
+    width: 50%;
     display: grid;
     justify-content: center;
     gap: 2rem;
     grid-template-columns: repeat(2, auto);
-}
-.screenshot {
-    overflow: hidden;
-    border-radius: 0.5rem;
-    transition: transform 0.25s;
-    width: 100%;
-    aspect-ratio: 3/2;
-}
-.screenshot:hover {
-    transform: scale(1.1);
-}
-.details-and-shops {
     margin-top: 2rem;
-    padding-top: 75px;
-    justify-content: space-between;
-    display: flex;
-}
-.details {
-    width: 50%;
-    display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(auto-fit, 50%);
-}
-.details__label {
-    font-weight: 700;
-    color: rgb(100, 100, 100);
-}
-.details > div {
-    margin: 1rem;
-}
-.stores {
-    width: 40%;
-}
-.stores > h3 {
-    text-align: left;
-    font-size: 2rem;
-    margin-left: 1rem;
-}
-.stores > div {
-    width: 100%;
-    margin-top: 2rem;
-    display: grid;
-    grid-template-columns: repeat(2, 50%);
-}
-.stores a {
-    display: block;
-    padding: 1em;
-    margin: 0.5rem;
-    text-align: center;
-    border-radius: 5px;
-    background-color: rgb(20, 20, 20);
 }
 
+.screenshot {
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 3/2;
+    border-radius: 0.25rem;
+}
+
+/* DETAILS */
+
+.details {
+    padding-top: 100px;
+}
+.details .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 2rem;
+}
+
+.facts {
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 2rem;
+}
+
+.label {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: rgb(100, 100, 100);
+}
+
+.stores {
+    width: 40%;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 1rem;
+}
+.store {
+    width: 100%;
+    font-size: 1.25rem;
+    background-color: rgb(50, 50, 50);
+    text-align: center;
+    padding: 1em;
+}
+
+/* REDDIT */
+
 .reddit {
-    margin-top: 5rem;
-    padding-top: 75px;
+    padding-top: 100px;
 }
-.reddit h3 {
-    font-size: 3rem;
-}
+
+/* COMMENTS */
 
 .comments {
     margin-top: 5rem;
@@ -125,7 +142,6 @@
     background-color: rgb(20, 20, 20);
     padding: 2rem;
     border-radius: 0.5rem;
-    color: white;
 }
 .comment__image {
     overflow: hidden;
