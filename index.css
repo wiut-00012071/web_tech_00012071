@@ -4,6 +4,7 @@
 .main-content {
     margin-left: 250px;
     min-height: calc(100% - 70px);
+    padding-top: 70px;
     position: relative;
 }
 .cards {
