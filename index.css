@@ -143,17 +143,18 @@ select {
 }
 .page-buttons {
     max-width: 700px;
-    margin: 0 auto;
-    padding: 3rem;
+    margin: 2rem auto;
+    padding: 2rem;
     display: flex;
-    gap: 5rem;
-    justify-content: center;
+    justify-content: space-evenly;
+    gap: 1rem;
 }
 .page-button {
     display: none;
-    border-radius: 0.25em;
+    border-radius: 0.5rem;
     width: 100%;
-    padding: 1em 2em;
+    max-width: 250px;
+    padding: 2em;
     background-color: var(--dark-grey);
 }
 .page-button:hover {
