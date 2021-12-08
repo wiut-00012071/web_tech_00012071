@@ -3,7 +3,7 @@
 
 .main-content {
     margin-left: 250px;
-    min-height: calc(100vh - 70px);
+    min-height: calc(100% - 70px);
     position: relative;
 }
 .cards {
