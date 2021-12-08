@@ -143,12 +143,13 @@ select {
 }
 .page-buttons {
     max-width: 700px;
-    margin: 4rem auto;
+    margin: 0 auto;
     display: flex;
     justify-content: space-evenly;
     gap: 1rem;
 }
 .page-button {
+    margin: 4rem 0;
     display: none;
     border-radius: 0.5rem;
     width: 100%;
