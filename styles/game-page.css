@@ -193,15 +193,15 @@
     inset: 0;
     width: 100vw;
     height: 100vh;
-    padding: 12vmin;
+    padding: 13vh 13vw;
 }
 
 .image-viewer__close-button {
     position: absolute;
-    width: 10vmin;
-    height: 10vmin;
-    right: 2vmin;
-    top: 2vmin;
+    width: 10vmax;
+    height: 10vmax;
+    right: 2vw;
+    top: 2vh;
     border-radius: 15%;
     background-color: transparent;
 }
@@ -233,7 +233,7 @@
     height: 100%;
 }
 .image img {
-    object-fit: contain;
+    object-fit: cover;
 }
 
 .image-viewer.open {
