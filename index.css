@@ -5,8 +5,8 @@
     margin-left: 250px;
 }
 .cards {
-    padding-top: 100px;
-    min-height: 100vh;
+    padding-top: 1rem;
+    min-height: calc(100vh - 70px);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

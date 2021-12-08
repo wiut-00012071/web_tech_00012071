@@ -114,7 +114,7 @@ input::placeholder {
     z-index: 2;
     font-size: 1.5rem;
     width: 100%;
-    position: fixed;
+    position: sticky;
     top: 0;
     display: flex;
     justify-content: flex-end;
