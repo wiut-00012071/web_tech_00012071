@@ -5,7 +5,7 @@
         filter: opacity(1);
     }
     100% {
-        filter: opacity(0.2);
+        filter: opacity(0.5);
     }
 }
 .main-content {
