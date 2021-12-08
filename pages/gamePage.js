@@ -88,9 +88,9 @@ function displayMetacriticScores(data) {
         if (i !== 0) scores += ", ";
         scores += `<a href="${score.url}"><span>${score.platform.name}</span>-<span>(${score.metascore})</span></a>`;
     });
-    return `<div>
+    return `<div class="fact">
                 <p class="label">Metacritic scores</p>
-                <div>${scores}</div>
+                <p class="text">${scores}</p>
             </div>`;
 }
 
@@ -104,7 +104,7 @@ function displayLastUpdated(data) {
     return `
         <div class="fact">
             <p class="label">Last update</p>
-            <p>
+            <p class="text">
                 ${day} ${months[month - 1]} ${year}
             </p>
         </div>`;
@@ -188,17 +188,17 @@ async function displayGame() {
                                 <div class="facts">
                                     <div class="fact">
                                         <p class="label">Official website</p>
-                                        <div class="text">
-                                            <a href="${data.website}">
+                                            <p><a class="text" href="${
+                                                data.website
+                                            }">
                                                 ${data.name}
-                                            </a>
-                                        </div>
+                                            </a></p>
                                     </div>
                                     <div class="fact">
                                         <p class="label">Released</p>
-                                        <div class="text">
+                                        <p class="text">
                                             ${displayReleasedDate(data)}
-                                        </div>
+                                        </p>
                                     </div>
                                     ${displayLastUpdated(data)}
                                     <div class="fact">
