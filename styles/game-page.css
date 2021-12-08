@@ -180,6 +180,9 @@
 .comment__time {
     text-align: right;
 }
+
+/* SCREENSHOT VIEWER */
+
 .image-viewer {
     display: none;
     z-index: 99999;
@@ -228,12 +231,14 @@
     height: 100%;
 }
 .image img {
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .image-viewer.open {
     display: block;
 }
+
+/* ADAPTIVE MEDIA QUERIES */
 
 @media (max-width: 900px) {
     .header {
