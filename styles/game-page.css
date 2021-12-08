@@ -49,10 +49,17 @@
     line-height: 1;
     padding: 0.5rem;
     border-radius: 1rem;
-    color: green;
-    border: 0.25rem solid green;
+    color: rgb(0, 180, 0);
+    border: 0.25rem solid rgb(0, 180, 0);
 }
-
+.metascore.yellow {
+    color: rgb(255, 220, 40);
+    border: 0.25rem solid rgb(255, 220, 40);
+}
+.metascore.red {
+    color: rgb(120, 0, 0);
+    border: 0.25rem solid rgb(120, 0, 0);
+}
 /* DESCRIPTION */
 
 .description {

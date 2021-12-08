@@ -23,7 +23,7 @@
     border-bottom-right-radius: 0.5rem;
 }
 .game-card__metascore.yellow {
-    background-color: rgb(220, 180, 0);
+    background-color: rgb(255, 220, 40);
 }
 .game-card__metascore.red {
     background-color: rgb(120, 0, 0);
