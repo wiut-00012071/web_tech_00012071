@@ -45,6 +45,7 @@
 }
 
 .metascore {
+    width: fit-content;
     font-size: 3rem;
     line-height: 1;
     padding: 0.5rem;
@@ -118,14 +119,13 @@
     width: 40%;
     display: grid;
     grid-template-columns: repeat(2, auto);
-    gap: 1rem;
 }
 .store {
-    width: 100%;
     font-size: 1.25rem;
     background-color: rgb(50, 50, 50);
     text-align: center;
     padding: 1em;
+    margin: 0.5em;
 }
 
 /* REDDIT */
@@ -176,4 +176,46 @@
 }
 .comment__time {
     text-align: right;
+}
+
+@media (max-width: 900px) {
+    .header {
+        display: block;
+    }
+    .metascore {
+        margin-top: 1em;
+    }
+    .about,
+    .screenshots {
+        width: 100%;
+        padding-top: 75px;
+        gap: 1rem;
+    }
+
+    .description {
+        display: block;
+        padding-top: 0;
+    }
+    .details {
+        padding-top: 75px;
+    }
+    .details .flex {
+        display: block;
+    }
+    .facts,
+    .stores {
+        width: 100%;
+        text-align: center;
+    }
+    .stores {
+        padding-top: 75px;
+        grid-template-columns: repeat(2, 50%);
+    }
+    .comments {
+        display: block;
+    }
+    .comment {
+        margin: 0;
+        margin-top: 32px;
+    }
 }

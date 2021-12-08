@@ -138,7 +138,73 @@ async function displayGame() {
                             <h1 class="title">${data.name}</h1>
                             ${displayMetascore(data)}
                         </section>
-                   
+                        <section class="description" id="description">
+                            <div class="about">
+                                <h2>About</h2>
+                               ${data.description}
+                               ${displayRedditDescription(data)}
+                            </div>
+                            <div class="screenshots">
+                                ${displayScreenshots(screenshots)}
+                            </div>
+                        </section>
+                        <section class="details" id="details">
+                            <h2>Details</h2>
+                            <div class="flex">
+                                <div class="facts">
+                                    <div class="fact">
+                                        <p class="label">Official website</p>
+                                        <div class="text">
+                                            <a href="${data.website}">
+                                                ${data.name}
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="fact">
+                                        <p class="label">Released</p>
+                                        <div class="text">
+                                            ${displayReleasedDate(data)}
+                                        </div>
+                                    </div>
+                                    ${displayLastUpdated(data)}
+                                    <div class="fact">
+                                        <p class="label">Playtime</p>
+                                        <div class="text">
+                                            ${data.playtime} hours
+                                        </div>
+                                    </div>
+                                    <div class="fact">
+                                        <p class="label">Publishers</p>
+                                        <div class="text">
+                                            ${displayList(data.publishers)}
+                                        </div>
+                                    </div>
+                                    <div class="fact">
+                                        <p class="label">Developers</p>
+                                        <div class="text">
+                                            ${displayList(data.developers)}
+                                        </div>
+                                    </div>
+                                    <div class="fact">
+                                        <p class="label">Platforms</p>
+                                        <div class="text">
+                                            ${displayPlatforms(data)}
+                                        </div>
+                                    </div>
+                                    ${displayMetacriticScores(data)}
+                                    <div class="fact">
+                                        <p class="label">Genres</p>
+                                        <div class="text">
+                                            ${displayList(data.genres)}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="stores">
+                                    ${displayStores(data)}
+                                </div>
+                            </div>
+                        </section>
+                        ${displayComments(redditData)}
                     </div>
                 </div>
             </div>
