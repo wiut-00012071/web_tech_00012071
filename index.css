@@ -2,9 +2,9 @@
 @import url(styles/game-card.css);
 
 .main-content {
-    padding-top: 2rem;
+    padding-top: 100px;
     margin-left: 250px;
-    min-height: calc(100vh - 70px);
+    min-height: 100vh;
     position: relative;
 }
 .cards {
