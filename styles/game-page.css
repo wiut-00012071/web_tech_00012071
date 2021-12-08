@@ -9,8 +9,8 @@
 }
 
 .content {
-    background-color: #000;
-    box-shadow: 0 0 40vh 40vh black;
+    background-color: var(--black);
+    box-shadow: 0 0 40vh 40vh var(--black);
 }
 
 .content h2,
@@ -112,7 +112,7 @@
 .label {
     font-weight: 700;
     font-size: 1.25rem;
-    color: rgb(100, 100, 100);
+    color: var(--light-grey);
 }
 
 .stores {
@@ -122,12 +122,14 @@
 }
 .store {
     font-size: 1.25rem;
-    background-color: rgb(50, 50, 50);
+    background-color: var(--medium-grey);
     text-align: center;
     padding: 1em;
     margin: 0.5em;
 }
-
+.store:hover {
+    background-color: var(--lighter-grey);
+}
 /* REDDIT */
 
 .reddit {
@@ -146,7 +148,7 @@
 
 .comment {
     margin: 1rem;
-    background-color: rgb(20, 20, 20);
+    background-color: var(--dark-grey);
     padding: 2rem;
     border-radius: 0.5rem;
 }

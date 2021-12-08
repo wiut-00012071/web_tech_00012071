@@ -47,6 +47,7 @@ function displayScreenshots(data) {
 
         screenshots += `<div class="screenshot">
         <img
+            loading="lazy"
             src="${resizedImage}"
             alt=""
         />

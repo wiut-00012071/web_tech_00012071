@@ -1,6 +1,6 @@
 .game-card {
     height: fit-content;
-    background-color: rgb(20, 20, 20);
+    background-color: var(--dark-grey);
     overflow: hidden;
     width: 300px;
     margin: 16px;
@@ -37,7 +37,7 @@
     transition: 150ms ease filter;
 }
 .game-card__title:hover {
-    filter: drop-shadow(0 0 0.5em white);
+    filter: drop-shadow(0 0 0.5em var(--white));
 }
 .game-card__platforms {
     display: flex;
