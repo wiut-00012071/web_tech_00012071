@@ -1,13 +1,6 @@
 @import url(styles/general-styles.css);
 @import url(styles/game-card.css);
-@keyframes animate-platform {
-    0% {
-        filter: opacity(1);
-    }
-    100% {
-        filter: opacity(0.5);
-    }
-}
+
 .main-content {
     padding-top: 2rem;
     margin-left: 250px;
@@ -173,6 +166,21 @@ select {
     text-align: center;
     padding: 1rem;
     font-size: 0.75rem;
+}
+
+.not-found {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.not-found__text {
+    display: block;
+    font-size: 5rem;
+    text-align: center;
+    text-shadow: 0 0 0.5em greenyellow;
+    animation: animate-logo 2s linear infinite;
 }
 
 @media (max-width: 768px) {

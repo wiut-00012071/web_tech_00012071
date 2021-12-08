@@ -121,7 +121,10 @@ async function getGameCards(url) {
 
         let cards = "";
 
-        if (data.results.length === 0) return `<div>NO GAMES FOUND</div>`;
+        if (data.results.length === 0)
+            return `<div class="not-found">
+                <span class="not-found__text">NO GAMES FOUND</span>
+            </div>`;
 
         data.results.forEach((game) => {
             cards += useCard(game);
