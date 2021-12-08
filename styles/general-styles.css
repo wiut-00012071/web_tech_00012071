@@ -81,6 +81,8 @@ input::placeholder {
     font-size: inherit;
 }
 .navigation {
+    padding: 0.5rem;
+    height: 70px;
     z-index: 2;
     font-size: 1.25rem;
     width: 100%;
@@ -93,7 +95,7 @@ input::placeholder {
     color: white;
 }
 .navigation > a {
-    padding: 1em;
+    padding: 0.5em;
 }
 
 .navigation .logo {
@@ -102,8 +104,8 @@ input::placeholder {
     display: block;
     margin-right: auto;
     font-size: 2rem;
-    margin-left: 2rem;
-    text-shadow: 0 0 1rem greenyellow;
+    margin-left: 1em;
+    text-shadow: 0 0 1em greenyellow;
     animation: animate-logo 2s linear infinite;
 }
 
@@ -185,4 +187,19 @@ input::placeholder {
 }
 img {
     object-fit: cover;
+}
+@media (max-width: 800px) {
+    html {
+        font-size: 14px;
+    }
+}
+@media (max-width: 600px) {
+    html {
+        font-size: 12px;
+    }
+}
+@media (max-width: 400px) {
+    html {
+        font-size: 10px;
+    }
 }

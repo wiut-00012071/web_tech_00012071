@@ -39,8 +39,8 @@
 .burger {
     display: none;
     background-color: transparent;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 2px;
     position: relative;
     margin: 0 1rem;
