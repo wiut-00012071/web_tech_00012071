@@ -1,16 +1,16 @@
 @import url(./general-styles.css);
 .wrapper {
-    padding-top: 80vh;
+    padding-top: 90vh;
     padding-bottom: 130vh;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: top;
+    background-position: top center;
 }
 
 .content {
     background-color: var(--black);
-    box-shadow: 0 0 40vh 40vh var(--black);
+    box-shadow: 0 0 30vh 30vh var(--black);
 }
 
 .content h2,
