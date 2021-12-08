@@ -1,7 +1,6 @@
 "use strict";
 
 // IMPORTS
-window.scrollTo(0, 0);
 
 import TOKEN from "./secret.js";
 
