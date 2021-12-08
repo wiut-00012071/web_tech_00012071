@@ -188,18 +188,18 @@
 .image-viewer {
     display: none;
     z-index: 99999;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.95);
     position: fixed;
     inset: 0;
     width: 100vw;
     height: 100vh;
-    padding: 13vh 13vw;
+    padding: 10vh 10vw;
 }
 
 .image-viewer__close-button {
     position: absolute;
-    width: 10vmax;
-    height: 10vmax;
+    width: 7vmax;
+    height: 7vmax;
     right: 2vw;
     top: 2vh;
     border-radius: 15%;
@@ -233,7 +233,7 @@
     height: 100%;
 }
 .image img {
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .image-viewer.open {
