@@ -193,13 +193,13 @@
     inset: 0;
     width: 100vw;
     height: 100vh;
-    padding: 5vmax 15vmax;
+    padding: 1vmax 10vmax;
 }
 
 .image-viewer__close-button {
     position: absolute;
-    width: 8vmax;
-    height: 8vmax;
+    width: 6vmax;
+    height: 6vmax;
     right: 2vmax;
     top: 2vmax;
     border-radius: 15%;
@@ -288,7 +288,7 @@
 }
 @media (orientation: portrait) {
     .image-viewer {
-        padding: 15vmax 5vmax;
+        padding: 15vmax 1vmax;
     }
     .image-viewer__close-button {
         width: 10vmax;
