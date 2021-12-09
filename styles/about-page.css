@@ -46,3 +46,26 @@
 .socials > a:hover {
     filter: drop-shadow(0 0 0.5em var(--white));
 }
+
+@media (max-width: 800px) {
+    .flex {
+        display: block;
+    }
+    .map {
+        margin-top: 2rem;
+        width: 100%;
+        aspect-ratio: 2/3;
+    }
+    .socials {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+    .socials a {
+        width: fit-content;
+        margin: 0 auto;
+    }
+}

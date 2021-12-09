@@ -72,8 +72,9 @@
     padding: 0.5em 1em;
     width: 100%;
 }
-select {
+.period-selects {
     cursor: pointer;
+    position: relative;
 }
 
 .platforms {

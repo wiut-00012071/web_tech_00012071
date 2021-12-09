@@ -43,6 +43,7 @@ document.addEventListener("click", (e) => {
     }
 });
 
+// FUNCTION FOR RESIZING BACKGROUND IMAGE
 function resizeBackgroundImage(data) {
     const resizedImage = `${data.background_image.slice(
         0,

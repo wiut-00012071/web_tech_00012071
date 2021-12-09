@@ -18,7 +18,7 @@
             <a href="/pages/about-page.html">ABOUT</a>
         </nav>
             <aside class="sidebar" id="sidebar">
-                <form class="form" action="#" id="filterForm" method="get">
+                <form class="form" id="filterForm" method="get">
                     <div class="search">
                         <input
                             type="text"
@@ -31,8 +31,10 @@
                     </div>
                     <div class="period">
                         <select
+                            class="period-select"
                             name="releasePeriodFilter"
                             id="releasePeriodFilter"
+
                         >
                             <option value="">ALL TIME</option>
                             <option value="2020-01-01,2021-12-31">
