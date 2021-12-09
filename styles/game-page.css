@@ -193,15 +193,15 @@
     inset: 0;
     width: 100vw;
     height: 100vh;
-    padding: 10vh 10vw;
+    padding: 5vmax 15vmax;
 }
 
 .image-viewer__close-button {
     position: absolute;
-    width: 7vmax;
-    height: 7vmax;
-    right: 2vw;
-    top: 2vh;
+    width: 8vmax;
+    height: 8vmax;
+    right: 2vmax;
+    top: 2vmax;
     border-radius: 15%;
     background-color: transparent;
 }
@@ -284,5 +284,16 @@
     }
     .content p {
         font-size: 1.5rem;
+    }
+}
+@media (orientation: portrait) {
+    .image-viewer {
+        padding: 15vmax 5vmax;
+    }
+    .image-viewer__close-button {
+        width: 10vmax;
+        height: 10vmax;
+        right: 2vmax;
+        top: 2vmax;
     }
 }
