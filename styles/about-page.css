@@ -6,8 +6,17 @@
     padding: 0.5em 0;
     font-size: 3rem;
 }
+.main p {
+    font-size: 1.25rem;
+    max-width: 80ch;
+}
+.main a {
+    font-size: 1.5rem;
+    text-shadow: 0 0 0.5em greenyellow;
+    animation: animate-logo 2s linear infinite;
+}
 .main section {
-    padding-top: 100px;
+    padding-top: 80px;
 }
 .map {
     overflow: hidden;
@@ -17,14 +26,14 @@
 }
 
 .credits__text {
+    margin-top: 5rem;
     text-align: center;
-    margin-top: 1em;
-    font-size: 3rem;
 }
-.rawg-link {
-    font-size: 5rem;
-    text-shadow: 0 0 0.5em greenyellow;
-    animation: animate-logo 2s linear infinite;
+.credits__text p {
+    font-size: 2rem;
+}
+a.rawg-link {
+    font-size: 4rem;
 }
 .flex {
     margin-top: 2rem;
