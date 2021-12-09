@@ -63,7 +63,6 @@ body {
     background-color: var(--black);
 }
 html {
-    scroll-behavior: smooth;
     font-size: 16px;
     line-height: 1.5;
     overflow: hidden;
@@ -74,6 +73,7 @@ body {
     width: 100%;
     position: fixed;
     overflow-y: scroll;
+    scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
 }
 a {
