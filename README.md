@@ -1,6 +1,6 @@
 # web_tech_00012071
 
-<h2>Purpose of the website</h2>
+                        <h2>Purpose of the website</h2>
                         <p>
                             This project was created as a course work by
                             00012071 - a student of Westminster International
@@ -31,5 +31,6 @@
                             so on.
                         </p>
                         <h2>Links</h2>
-                        <p><a href="https://github.com/wiut-00012071/web_tech_00012071">Github</a></p>
+                        <p><a href="">Github</a></p>
                         <p><a href="https://upbeat-easley-f53c1a.netlify.app/">Netlify</a></p>
+                        <h2>Directly downloaded ZIP from github will not work, as secret.js that has api TOKEN is in .gitignore</h2>
