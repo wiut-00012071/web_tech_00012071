@@ -1,5 +1,6 @@
 import { months } from "./objects.js";
 
+// FUNCTION FOR DISPLAYING IMAGE IF EXISTS
 function displayImage(data) {
     if (!data.image) return "";
 
@@ -8,6 +9,7 @@ function displayImage(data) {
             </div>`;
 }
 
+// FUNCTION FOR CONVERTING DATE
 function displayDate(data) {
     if (!data.created) return "";
 
@@ -19,6 +21,8 @@ function displayDate(data) {
                 ${day} ${months[month - 1]} ${year}
             </p>`;
 }
+
+// GENERAL FUNCTION FOR CREATING REDDIT COMMENTS
 
 export default function useComment(data) {
     return `<div class="comment">

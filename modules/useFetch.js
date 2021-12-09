@@ -1,3 +1,5 @@
+// GENERAL FUNCTION FOR FETCHING DATA
+
 export default async function useFetch(url) {
     // General function for fetching API
     const response = await fetch(url);

@@ -1,7 +1,8 @@
 import { platformIcons, displayReleasedDate } from "./objects.js";
 
-// Helper functions for validating API data
+// HELPER FUNCTIONS FOR VALIDATING API DATA
 
+// CREATING METASCORE ELEMENT, SETTING CLASSNAME COLOR BASED ON SCORE
 function displayMetascore(data) {
     if (!data.metacritic) return "";
 
@@ -14,6 +15,7 @@ function displayMetascore(data) {
     return `<div class="game-card__metascore ${metacriticColor}">${data.metacritic}</div>`;
 }
 
+// SERVER-SIDE RESIZING OF IMAGE
 function displayResizedImage(data) {
     if (!data.background_image) return "";
     const resizedImage = `
@@ -24,6 +26,7 @@ function displayResizedImage(data) {
     return `<img loading="lazy" src="${resizedImage}" alt="" />`;
 }
 
+// DISPLAYING ICONS OF PLATFORMS SUPPORTING THE GAME
 function displayPlatforms(data) {
     let platforms = "";
     data.parent_platforms?.forEach((platform) => {
@@ -34,11 +37,12 @@ function displayPlatforms(data) {
     return platforms;
 }
 
+// DISPLAYING AGE RATING
 function displayAgeRating(data) {
     return data.esrb_rating?.name_en ? data.esrb_rating.name_en : "";
 }
 
-// Function for creating a game card
+// GENERAL FUNCTION FOR CREATING GAME CARDS
 
 export default function useCard(data) {
     return `<div class="game-card">

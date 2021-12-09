@@ -1,4 +1,7 @@
-"use strict";
+"use strict"; // ENABLING STRICT MODE
+
+// IMPORTING DEPENDENCIES
+
 import TOKEN from "../secret.js";
 
 import { months, displayReleasedDate } from "../modules/objects.js";
@@ -6,6 +9,8 @@ import { months, displayReleasedDate } from "../modules/objects.js";
 import useFetch from "../modules/useFetch.js";
 
 import useComment from "../modules/useComment.js";
+
+// GETTING HTML ELEMENTS
 
 const main = document.getElementById("main");
 
@@ -15,13 +20,19 @@ const imageViewer = document.querySelector("#imageViewer");
 
 const gameID = window.location.search.substring(1);
 
+// DEFAULT URLS
+
 const url = `https://api.rawg.io/api/games/${gameID}?key=${TOKEN}`;
 
 const redditUrl = `https://api.rawg.io/api/games/${gameID}/reddit?key=${TOKEN}`;
 
+// GETTING ARRAY OF SCREENSHOTS FROM SESSION STORAGE THAT WAS SAVED DURING INITIAL FETCHING
+
 const screenshots = JSON.parse(
     sessionStorage.getItem(gameID)
 ).short_screenshots;
+
+// CONTROLING OPENING AND CLOSING SCREENSHOT VIEWER
 
 document.addEventListener("click", (e) => {
     if (e.target.id === "imageViewerCloseButton") {
@@ -32,6 +43,7 @@ document.addEventListener("click", (e) => {
     }
 });
 
+// FUNCTION FOR DINAMICALLY CHANGING SCREENSHOT TO VIEW
 function viewImage(image) {
     imageViewer.innerHTML = `
             <div class="image">
@@ -45,6 +57,7 @@ function viewImage(image) {
     imageViewer.classList.add("open");
 }
 
+// CREATING METASCORE ELEMENT, SETTING CLASSNAME COLOR BASED ON SCORE
 function displayMetascore(data) {
     if (!data.metacritic) return "";
     let color = "";
@@ -54,11 +67,13 @@ function displayMetascore(data) {
     return `<h1 class="metascore ${color}">${data.metacritic}</h1>`;
 }
 
+// CREATING REDDIT DESCRIPTION ELEMNT
 function displayRedditDescription(data) {
     if (!data.reddit_description) return "";
     return `<h3>Reddit</h3><p>${data.reddit_description}</p>`;
 }
 
+// CREATING GRID OF SCREENSHOTS
 function displayScreenshots(data) {
     let screenshots = "";
     data.forEach((shot, i) => {
@@ -81,6 +96,7 @@ function displayScreenshots(data) {
     return screenshots;
 }
 
+// CREATING METACRITIC SCORES BY PLATFORM ELEMENT
 function displayMetacriticScores(data) {
     if (data.metacritic_platforms.length === 0) return "";
     let scores = "";
@@ -94,6 +110,7 @@ function displayMetacriticScores(data) {
             </div>`;
 }
 
+// CREATING LAST UPDATE ELEMENT
 function displayLastUpdated(data) {
     if (!data.updated) return "";
 
@@ -110,6 +127,7 @@ function displayLastUpdated(data) {
         </div>`;
 }
 
+// GENERAL FUNCTION FOR CREATING ELEMENT WITH ARRAY OF ITEMS
 function displayList(array) {
     let items = "";
     array.forEach((item, i) => {
@@ -119,6 +137,7 @@ function displayList(array) {
     return items;
 }
 
+// CREATING PLATFORMS ELEMENT
 function displayPlatforms(data) {
     let platforms = "";
     data.platforms.forEach((platform, i) => {
@@ -128,6 +147,7 @@ function displayPlatforms(data) {
     return platforms;
 }
 
+// CREATING GRID OF STORES ELEMENT
 function displayStores(data) {
     let stores = "";
     data.stores.forEach((store) => {
@@ -136,6 +156,7 @@ function displayStores(data) {
     return stores;
 }
 
+// CREATING GRID OF REDDIT COMMETS
 function displayComments(data) {
     if (data.results.length === 0) return "";
     navigation.innerHTML = `
@@ -158,8 +179,11 @@ function displayComments(data) {
 }
 
 async function displayGame() {
+    // FETCHING GAME DATA AND RELATED REDDIT COMMENTS
     const data = await useFetch(url);
     const redditData = await useFetch(redditUrl);
+
+    // SELF_INVOKING FUNCTION THAT FIRES OFF AS SOON AS BOTH FETCH PORMISES FINISH
     (() => {
         document.title = data.name;
         main.innerHTML = `
