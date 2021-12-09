@@ -5,7 +5,7 @@ function displayImage(data) {
     if (!data.image) return "";
 
     return `<div class="comment__image">
-                <img class="screenshot__image" src=${data.image} alt="" />
+                <img class="screenshot__image" src=${data.image} alt="comment" />
             </div>`;
 }
 

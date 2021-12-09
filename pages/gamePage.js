@@ -58,7 +58,7 @@ function viewImage(image) {
             <div class="image">
                 <img
                     src="${image}"
-                    alt=""
+                    alt="screeenshot"
                 />
             </div>
             <button class="image-viewer__close-button" id="imageViewerCloseButton"></button>`;
@@ -97,7 +97,7 @@ function displayScreenshots(data) {
                             <img
                                 class="screenshot__image"
                                 src="${resizedImage}"
-                                alt=""
+                                alt="screenshot"
                             />
                         </div>`;
     });

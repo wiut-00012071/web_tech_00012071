@@ -23,7 +23,7 @@ function displayResizedImage(data) {
         0,
         27
     )}/resize/640/-${data.background_image.slice(27)}`;
-    return `<img loading="lazy" src="${resizedImage}" alt="" />`;
+    return `<img loading="lazy" src="${resizedImage}" alt="game" />`;
 }
 
 // DISPLAYING ICONS OF PLATFORMS SUPPORTING THE GAME
