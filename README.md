@@ -42,7 +42,7 @@ href="https://github.com/wiut-00012071/web_tech_00012071"
 <p>
 <a
 class="link"
-href="https://upbeat-easley-f53c1a.netlify.app/"
+href="https://00012071.netlify.app/"
 >Netlify</a
 >
 </p>
