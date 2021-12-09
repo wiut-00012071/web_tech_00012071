@@ -95,10 +95,19 @@ svg {
     object-fit: cover;
     display: block;
 }
+iframe {
+    width: 100%;
+    height: 100%;
+}
 select {
     border: none;
     outline: none;
 }
+input,
+textarea {
+    background-color: var(--darker-grey);
+}
+
 input,
 select:focus {
     line-height: 1;
