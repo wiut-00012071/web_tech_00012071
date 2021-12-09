@@ -49,3 +49,6 @@ href="https://upbeat-easley-f53c1a.netlify.app/"
 Directly downloaded ZIP from github will not work,
 as secret.js that has api TOKEN is in .gitignore
 </h2>
+<h2>
+This site will not work on local machine if directly accessed to index.html, as the .js files are connected as modules. To run the website use VScode's live server.
+</h2>
