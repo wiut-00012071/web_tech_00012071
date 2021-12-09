@@ -43,6 +43,14 @@ document.addEventListener("click", (e) => {
     }
 });
 
+function resizeBackgroundImage(data) {
+    const resizedImage = `${data.background_image.slice(
+        0,
+        27
+    )}/resize/1920/-${data.background_image.slice(27)}`;
+    return resizedImage;
+}
+
 // FUNCTION FOR DINAMICALLY CHANGING SCREENSHOT TO VIEW
 function viewImage(image) {
     imageViewer.innerHTML = `
@@ -87,7 +95,6 @@ function displayScreenshots(data) {
         screenshots += `<div class="screenshot">
                             <img
                                 class="screenshot__image"
-                                loading="lazy"
                                 src="${resizedImage}"
                                 alt=""
                             />
@@ -187,9 +194,9 @@ async function displayGame() {
     (() => {
         document.title = data.name;
         main.innerHTML = `
-            <div class="wrapper" style="background-image: url(${
-                data.background_image
-            });">
+            <div class="wrapper" style="background-image: url(${resizeBackgroundImage(
+                data
+            )});">
                 <div class="content">
                     <div class="container">
                         <section class="header">
